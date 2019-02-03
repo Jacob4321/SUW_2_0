@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Accesses list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Accessnr</th>
+                <th>Filenr</th>
+                <th>Usernr</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for access in accesses %}
+            <tr>
+                <td><a href="{{ path('access_show', { 'id': access.id }) }}">{{ access.id }}</a></td>
+                <td>{{ access.accessNr }}</td>
+                <td>{{ access.fileNr }}</td>
+                <td>{{ access.userNr }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('access_show', { 'id': access.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('access_edit', { 'id': access.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('access_new') }}">Create a new access</a>
+        </li>
+    </ul>
+{% endblock %}

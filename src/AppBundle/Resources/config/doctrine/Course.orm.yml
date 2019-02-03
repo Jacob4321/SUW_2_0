@@ -1,0 +1,18 @@
+AppBundle\Entity\Course:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\CourseRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        courseNr:
+            type: integer
+            column: course_nr
+        name:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

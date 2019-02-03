@@ -1,0 +1,21 @@
+AppBundle\Entity\access:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\accessRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        accessNr:
+            type: integer
+            column: access_nr
+        fileNr:
+            type: integer
+            column: file_nr
+        userNr:
+            type: integer
+            column: user_nr
+    lifecycleCallbacks: {  }
