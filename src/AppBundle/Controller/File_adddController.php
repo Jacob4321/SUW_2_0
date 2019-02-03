@@ -6,15 +6,21 @@ use AppBundle\Entity\File_addd;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Symfony\symfony\src\Symfony\Component\Routing;
+use Symfony\Component\HttpFoundation\Response;
+
 /**
  * File_addd controller.
- *
+ * @Route("/fileadd")
  */
 class File_adddController extends Controller
 {
     /**
      * Lists all file_addd entities.
-     *
+     *  @Route("/", name="file_addd")
      */
     public function indexAction()
     {

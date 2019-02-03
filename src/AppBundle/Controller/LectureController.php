@@ -6,15 +6,21 @@ use AppBundle\Entity\Lecture;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Symfony\symfony\src\Symfony\Component\Routing;
+use Symfony\Component\HttpFoundation\Response;
+
 /**
  * Lecture controller.
- *
+ * @Route("/lecture")
  */
 class LectureController extends Controller
 {
     /**
      * Lists all lecture entities.
-     *
+     * @Route("/", name="lecture")
      */
     public function indexAction()
     {

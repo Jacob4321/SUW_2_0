@@ -1,3 +1,24 @@
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
+
+app_course:
+    resource: "@AppBundle/Resources/config/routing/course.yml"
+    prefix:   /course
+
+app_file_addd:
+    resource: "@AppBundle/Resources/config/routing/file_addd.yml"
+    prefix:   /file_addd
+
+app_file_dwonload:
+    resource: "@AppBundle/Resources/config/routing/file_download.yml"
+    prefix:   /file_download
+
+app_access:
+    resource: "@AppBundle/Resources/config/routing/access.yml"
+    prefix:   /access
+
+app_lecture:
+    resource: "@AppBundle/Resources/config/routing/lecture.yml"
+    prefix:   /lecture
+

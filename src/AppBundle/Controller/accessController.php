@@ -6,15 +6,22 @@ use AppBundle\Entity\access;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Symfony\symfony\src\Symfony\Component\Routing;
+use Symfony\Component\HttpFoundation\Response;
+
 /**
  * Access controller.
- *
+ * @Route("/access")
  */
 class accessController extends Controller
 {
     /**
      * Lists all access entities.
-     *
+     * @Route("/", name="access")
+     * @Method("GET")
      */
     public function indexAction()
     {

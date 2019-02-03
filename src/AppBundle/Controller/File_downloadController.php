@@ -6,15 +6,21 @@ use AppBundle\Entity\File_download;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Symfony\symfony\src\Symfony\Component\Routing;
+use Symfony\Component\HttpFoundation\Response;
+
 /**
  * File_download controller.
- *
+ * @Route("/filedownload")
  */
 class File_downloadController extends Controller
 {
     /**
      * Lists all file_download entities.
-     *
+     * @Route("/", name="file_dwonload")
      */
     public function indexAction()
     {
