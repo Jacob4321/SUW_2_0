@@ -22,3 +22,6 @@ app_lecture:
     resource: "@AppBundle/Resources/config/routing/lecture.yml"
     prefix:   /lecture
 
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
