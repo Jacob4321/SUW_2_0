@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h2> Opis systemu </h2>
+            <p>SUW - System Udostępniania Wykładów</p>
+            <p>System służy do udostępniania wykładów Studentom. Wszystkie pliki są zabezpieczone przed kopiowaniem i drukowaniem.</p>
+        </div>
+        <div class="col-md-5 col-md-offset-3">
+            <h2>Statystyki</h2>
+            <div class="row">
+                <h4><span class="glyphicon glyphicon-user"></span> Liczba użytkowników</h4>
+            </div>
+            <div class="row">
+                <p>Razem <br> 0</p>
+            </div>
+            <div class="row">
+                <h4><span class="glyphicon glyphicon-save-file"></span> Pobrania</h4>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <p>Tygodniu <br> 0</p>
+                </div>
+                <div class="col-md-2">
+                    <p>Miesiącu <br> 0</p>
+                </div>
+                <div class="col-md-2">
+                    <p>Roku <br> 0</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+
+{% block stylesheets %}
+<style>
+    body { background: #F5F5F5; font: 18px/1.5 sans-serif; }
+    h1, h2 { line-height: 1.2; margin: 0 0 .5em; }
+    h1 { font-size: 36px; }
+    h2 { font-size: 21px; margin-bottom: 1em; }
+    p { margin: 0 0 1em 0; }
+    a { color: #0000F0; }
+    a:hover { text-decoration: none; }
+
+
+    @media (min-width: 768px) {
+        #wrapper { width: 80%; margin: 2em auto; }
+        #icon-book { display: inline-block; }
+        #status a, #next a { display: block; }
+
+        @-webkit-keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
+        @keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
+        .sf-toolbar { opacity: 0; -webkit-animation: fade-in 1s .2s forwards; animation: fade-in 1s .2s forwards;}
+    }
+
+</style>
+{% endblock %}

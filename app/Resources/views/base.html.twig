@@ -5,9 +5,30 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="{{ path('_home') }}">SUW 2.0</a>
+                </div>
+                <ul class="nav navbar-nav"><!--
+                  <li class="active"><a href="#">Home</a></li>
+                  <li><a href="#">page 1</a></li>
+                  <li><a href="#">Page 2</a></li>-->
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{{ path('_register') }}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="{{ path('_login') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+            </div>
+        </nav>
+            {% block body %}{% endblock %}
+            {% block javascripts %}{% endblock %}
+
+        <nav class="navbar navbar-inverse navbar-fixed-bottom">
+            <p class="text-muted" align="center"> Created by Jakub Piskorowski</p>
+        </nav>
     </body>
 </html>
