@@ -13,3 +13,6 @@ _register:
 
 _home:
     path: /
+
+_upload:
+    path: /product/new

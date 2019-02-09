@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+<h1>Dodaj nowy wykład</h1>
+
+
+{{ form_start(form) }}
+    {# ... #}
+
+    {{ form_row(form.brochure) }}
+    <input type="submit" class="btn float-left login_btn" />
+{{ form_end(form) }}
+
+{% endblock %}
