@@ -36,6 +36,6 @@ class countController extends Controller
             ->countUsers('user');
 
 
-        return new JsonResponse(array('users' => $users));
+        return new JsonResponse(array('users' => $users), 200, array('Access-Control-Allow-Origin'=> '*'));
     }
 }
