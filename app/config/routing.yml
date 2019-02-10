@@ -16,3 +16,6 @@ _home:
 
 _upload:
     path: /product/new
+
+_count:
+    path: /count
