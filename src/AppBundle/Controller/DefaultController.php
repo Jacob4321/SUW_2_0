@@ -13,9 +13,22 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        // replace this example code with whatever you need
+        $countUsers = $this->getDoctrine()->getRepository('AppBundle:User')->countUsers('user');
+        $countDayDownloads = $this->getDoctrine()->getRepository('AppBundle:DownloadFile')->countDayDownloads();
+        $countWeekDownloads = $this->getDoctrine()->getRepository('AppBundle:DownloadFile')->countWeekDownloads();
+        $countMonthDownloads = $this->getDoctrine()->getRepository('AppBundle:DownloadFile')->countMonthDownloads();
+        $countYearDownloads = $this->getDoctrine()->getRepository('AppBundle:DownloadFile')->countYearDownloads();
+        $countAllDownloads = $this->getDoctrine()->getRepository('AppBundle:DownloadFile')->countAllDownloads();
+
+
         return $this->render('Page/index.html.twig', array(
-            'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..'),
+            'countUsers' => $countUsers,
+            'countDayDownloads' => $countDayDownloads,
+            'countWeekDownloads' => $countWeekDownloads,
+            'countMonthDownloads' => $countMonthDownloads,
+            'countYearDownloads' => $countYearDownloads,
+            'countAllDownloads' => $countAllDownloads,
+
         ));
     }
 }

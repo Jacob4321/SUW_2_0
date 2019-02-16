@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        <li class="active"><a href="{{ path('_main') }}">Main</a></li>
+        <li><a href="{{ path('course_index') }}">Kursy</a></li>
+        <li><a href="{{ path('user_index') }}">Użytkownicy</a></li>
+        <li><a href="{{ path('file_index') }}">Wykłady</a></li>
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+
+
+<div class="col-md-4">
+    <h1>Jesteś zalogowany jako: {{ profile.username }}</h1>
+
+</div>
+<div class="col-md-5 col-md-offset-3">
+
+</div>
+
+{% endblock %}

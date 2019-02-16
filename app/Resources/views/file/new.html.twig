@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+    <li><a href="{{ path('_main') }}">Main</a></li>
+    <li><a href="{{ path('course_index') }}">Kursy</a></li>
+    <li><a href="{{ path('user_index') }}">Użytkownicy</a></li>
+    <li class="active"><a href="{{ path('file_index') }}">Wykłady</a></li>
+{% endblock %}
+
+{% block body %}
+<div class="col-md-12">
+    <h1>Dodaj wykład</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" class="btn btn-success" value="Create" />
+    {{ form_end(form) }}
+
+
+    <hr>
+    <a class="btn btn-primary btn-lg" href="{{ path('file_index') }}" role="button">Wróć do listy wykładów</a>
+
+</div>
+{% endblock %}

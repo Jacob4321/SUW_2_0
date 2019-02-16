@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+    <li><a href="{{ path('_main') }}">Main</a></li>
+    <li><a href="{{ path('course_index') }}">Kursy</a></li>
+    <li><a href="{{ path('user_index') }}">Użytkownicy</a></li>
+    <li class="active"><a href="{{ path('file_index') }}">Wykłady</a></li>
+{% endblock %}
+
+{% block body %}
+<div class="col-md-12">
+    <h1>Lista wykładów</h1>
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nazwa</th>
+                <th scope="col">Sciezka</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for file in files %}
+            <tr>
+                <th scope="row"><a href="{{ path('file_show', { 'id': file.id }) }}">{{ file.id }}</a></th>
+                <td>{{ file.nazwa }}</td>
+                <td>{{ file.sciezka }}</td>
+                <td>
+
+                    <a class="btn btn-info btn-lg btn-sm" href="{{ path('file_show', { 'id': file.id }) }}" role="button">pokaż</a>
+                    <a class="btn btn-info btn-lg btn-sm" href="{{ path('file_edit', { 'id': file.id }) }}" role="button">edytuj</a>
+
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-primary btn-lg" href="{{ path('file_new') }}" role="button">Dodaj nowy wykład</a>
+
+
+</div>
+{% endblock %}

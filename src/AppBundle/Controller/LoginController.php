@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use FOS\UserBundle\FOSUserBundle\Resources\config\routing;
 use Symfony\Component\HttpFoundation\Response;
 
 class LoginController extends Controller
@@ -15,7 +16,7 @@ class LoginController extends Controller
     {
         $zmienna = 0;
 
-        return $this->render('page/login.html.twig', array(
+        return $this->render('Page/login.html.twig', array(
             'loginn' => $zmienna,
         ));
     }

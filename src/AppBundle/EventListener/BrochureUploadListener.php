@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\File\File;
 use Doctrine\ORM\Event\LifecycleEventArgs;
 use Doctrine\ORM\Event\PreUpdateEventArgs;
-use AppBundle\Entity\Product;
+use AppBundle\Entity\Lecture;
 use AppBundle\FileUploader;
 
 class BrochureUploadListener
@@ -40,8 +40,8 @@ class BrochureUploadListener
 
     private function uploadFile($entity)
     {
-        // upload only works for Product entities
-        if (!$entity instanceof Product) {
+        // upload only works for Lecture entities
+        if (!$entity instanceof Lecture) {
             return;
         }
 

@@ -1,5 +1,14 @@
 {% extends 'base.html.twig' %}
 
+{% block header %}
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        <li><a href="{{ path('_main') }}">Main</a></li>
+        <li><a href="{{ path('course_index') }}">Kursy</a></li>
+        <li><a href="{{ path('user_index') }}">Użytkownicy</a></li>
+        <li><a href="{{ path('file_index') }}">Wykłady</a></li>
+    {%  endif %}
+{% endblock %}
+
 {% block body %}
 
 <div class="container">
@@ -15,20 +24,26 @@
                 <h4><span class="glyphicon glyphicon-user"></span> Liczba użytkowników</h4>
             </div>
             <div class="row">
-                <p>Razem <br> 0</p>
+                <p>Razem <br> {{ countUsers }}</p>
             </div>
             <div class="row">
                 <h4><span class="glyphicon glyphicon-save-file"></span> Pobrania</h4>
             </div>
             <div class="row">
                 <div class="col-md-2">
-                    <p>Tygodniu <br> 0</p>
+                    <p>Dniu <br> {{ countDayDownloads }}</p>
                 </div>
                 <div class="col-md-2">
-                    <p>Miesiącu <br> 0</p>
+                    <p>Tygodniu <br> {{ countWeekDownloads }}</p>
                 </div>
                 <div class="col-md-2">
-                    <p>Roku <br> 0</p>
+                    <p>Miesiącu <br> {{ countMonthDownloads }}</p>
+                </div>
+                <div class="col-md-2">
+                    <p>Roku <br> {{ countYearDownloads }}</p>
+                </div>
+                <div class="col-md-2">
+                    <p>Wszystkie <br> {{ countAllDownloads }}</p>
                 </div>
             </div>
         </div>

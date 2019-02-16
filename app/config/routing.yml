@@ -19,3 +19,19 @@ _upload:
 
 _count:
     path: /count
+
+_main:
+    path: /main
+    defaults: { _controller: AppBundle:Main:index }
+
+app_course:
+    resource: "@AppBundle/Resources/config/routing/course.yml"
+    prefix: /course
+
+app_file:
+    resource: "@AppBundle/Resources/config/routing/file.yml"
+    prefix: /file
+
+app_user:
+    resource: "@AppBundle/Resources/config/routing/user.yml"
+    prefix: /user

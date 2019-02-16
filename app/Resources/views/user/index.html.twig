@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+    <li><a href="{{ path('_main') }}">Main</a></li>
+    <li><a href="{{ path('course_index') }}">Kursy</a></li>
+    <li class="active"><a href="{{ path('user_index') }}">Użytkownicy</a></li>
+    <li><a href="{{ path('file_index') }}">Wykłady</a></li>
+{% endblock %}
+
+{% block body %}
+<div class="col-md-12">
+    <h1>Lista studentów</h1>
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nazwa użytkownika</th>
+                <th scope="col">Adres email</th>
+                <th scope="col">Ostatnio zalogowany</th>
+                <th scope="col">Rola w systemie</th>
+                <th scope="col">Akcje</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <th scope="row"><a href="{{ path('user_show', { 'id': user.id }) }}">{{ user.id }}</a></th>
+                <td>{{ user.username }}</td>
+                <td>{{ user.emailCanonical }}</td>
+                <td>{{ user.lastlogin|date("h:m d.m.Y", false) }}</td>
+                <td>
+                    {% for role in user.roles %}
+                        {{ role }} </br>
+                    {% endfor %}
+                </td>
+                <td>
+                    <a class="btn btn-info btn-lg btn-sm" href="{{ path('user_show', { 'id': user.id }) }}" role="button">pokaż</a>
+                    <a class="btn btn-info btn-lg btn-sm" href="{{ path('user_edit', { 'id': user.id }) }}" role="button">edytuj</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-primary btn-lg" href="{{ path('_register') }}" role="button">Stwórz nowego użytkownika</a>
+
+</div>
+{% endblock %}

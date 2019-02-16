@@ -1,0 +1,24 @@
+file_index:
+    path:     /
+    defaults: { _controller: "AppBundle:File:index" }
+    methods:  GET
+
+file_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:File:show" }
+    methods:  GET
+
+file_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:File:new" }
+    methods:  [GET, POST]
+
+file_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:File:edit" }
+    methods:  [GET, POST]
+
+file_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:File:delete" }
+    methods:  DELETE
