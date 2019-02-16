@@ -4,7 +4,7 @@
     <li><a href="{{ path('_main') }}">Main</a></li>
     <li><a href="{{ path('course_index') }}">Kursy</a></li>
     <li><a href="{{ path('user_index') }}">Użytkownicy</a></li>
-    <li class="active"><a href="{{ path('file_index') }}">Wykłady</a></li>
+    <li class="active"><a href="{{ path('lecture_index') }}">Wykłady</a></li>
 {% endblock %}
 
 {% block body %}
@@ -15,26 +15,23 @@
         <tbody>
             <tr>
                 <th>Id</th>
-                <td>{{ file.id }}</td>
+                <td>{{ lecture.id }}</td>
             </tr>
             <tr>
                 <th>Nazwa</th>
-                <td>{{ file.nazwa }}</td>
-            </tr>
-            <tr>
-                <th>Sciezka</th>
-                <td>{{ file.sciezka }}</td>
+                <td>{{ lecture.nazwa }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a class="btn btn-success btn-lg" href="{{ path('file_edit', { 'id': file.id }) }}" role="button">Edytuj</a>
+    <a class="btn btn-success btn-lg" href="{{ path('lecture_edit', { 'id': lecture.id }) }}" role="button">Edytuj</a>
     {{ form_start(delete_form) }}
-    <input type="submit" class="btn btn-danger btn-lg" value="Usuń kurs">
+    <input type="submit" class="btn btn-danger btn-lg" value="Usuń wykład">
     {{ form_end(delete_form) }}
 
     <hr>
-    <a class="btn btn-primary btn-lg" href="{{ path('file_index') }}" role="button">Wróć do listy wykładów</a>
-    
+    <a class="btn btn-primary btn-lg" href="{{ path('lecture_index') }}" role="button">Wróć do listy wykładów</a>
+
+
 </div>
 {% endblock %}

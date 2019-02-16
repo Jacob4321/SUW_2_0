@@ -44,7 +44,7 @@ class DownloadFile
 
     /**
      * @var int
-     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\File",inversedBy="id")
+     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\Lecture",inversedBy="id")
      */
     private $nrPlik;
 

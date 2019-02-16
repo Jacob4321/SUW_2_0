@@ -9,17 +9,18 @@
 namespace AppBundle\Entity;
 
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\HttpFoundation\Forms\Forms;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * File
+ * Lecture
  *
- * @ORM\Table(name="File")
+ * @ORM\Table(name="Lecture")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\FileRepository")
  */
 
-class File
+class Lecture
 {
     /**
      * @var int
@@ -103,10 +104,8 @@ class File
     public function setSciezka($sciezka)
     {
         $this->sciezka = $sciezka;
-
         return $this;
     }
-
     /**
      * Get sciezka
      *
@@ -139,5 +138,28 @@ class File
     public function getNrKursu()
     {
         return $this->nrKursu;
+    }
+    /**
+     * Set nrUser
+     *
+     * @param integer $nrnrUser
+     *
+     * @return nrUser
+     */
+    public function setnrUser($nrUser)
+    {
+        $this->nrUser = $nrUser;
+
+        return $this;
+    }
+
+    /**
+     * Get nrUser
+     *
+     * @return int
+     */
+    public function getnrUser()
+    {
+        return $this->nrUser;
     }
 }

@@ -5,7 +5,7 @@
         <li><a href="{{ path('_main') }}">Main</a></li>
         <li><a href="{{ path('course_index') }}">Kursy</a></li>
         <li><a href="{{ path('user_index') }}">Użytkownicy</a></li>
-        <li><a href="{{ path('file_index') }}">Wykłady</a></li>
+        <li><a href="{{ path('lecture_index') }}">Wykłady</a></li>
     {%  endif %}
 {% endblock %}
 
@@ -32,9 +32,6 @@
             <div class="row">
                 <div class="col-md-2">
                     <p>Dniu <br> {{ countDayDownloads }}</p>
-                </div>
-                <div class="col-md-2">
-                    <p>Tygodniu <br> {{ countWeekDownloads }}</p>
                 </div>
                 <div class="col-md-2">
                     <p>Miesiącu <br> {{ countMonthDownloads }}</p>

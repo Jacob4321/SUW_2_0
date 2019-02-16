@@ -29,8 +29,8 @@ app_course:
     prefix: /course
 
 app_file:
-    resource: "@AppBundle/Resources/config/routing/file.yml"
-    prefix: /file
+    resource: "@AppBundle/Resources/config/routing/lecture.yml"
+    prefix: /lecture
 
 app_user:
     resource: "@AppBundle/Resources/config/routing/user.yml"

@@ -18,7 +18,7 @@ class User extends BaseUser
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\dostep",mappedBy="nrUser")
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\File",mappedBy="nrUser")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Lecture",mappedBy="nrUser")
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\DownloadFile",mappedBy="nrUser")
      */
     protected $id;

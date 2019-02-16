@@ -6,7 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class FileType extends AbstractType
+class LectureType extends AbstractType
 {
     /**
      * {@inheritdoc}
@@ -16,9 +16,7 @@ class FileType extends AbstractType
         $builder->add('nazwa', 'text', array(
             'required' => true,
             'label' => 'Nazwa pliku',
-            'attr' => array(
-                'class' => 'is-large'
-            )
+
         ))
             ->add('sciezka', 'file', array(
                 'required' => false,
@@ -41,7 +39,7 @@ class FileType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\File'
+            'data_class' => 'AppBundle\Entity\Lecture'
         ));
     }
 
@@ -50,6 +48,8 @@ class FileType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'appbundle_file';
+        return 'appbundle_lecture';
     }
+
+
 }
