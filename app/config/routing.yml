@@ -35,3 +35,7 @@ app_file:
 app_user:
     resource: "@AppBundle/Resources/config/routing/user.yml"
     prefix: /user
+
+app_downloadfile:
+    resource: "@AppBundle/Resources/config/routing/downloadfile.yml"
+    prefix: /downloadfile

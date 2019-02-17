@@ -1,0 +1,24 @@
+downloadfile_index:
+  path:     /
+  defaults: { _controller: "AppBundle:DownloadFile:index" }
+  methods:  GET
+
+downloadfile_show:
+  path:     /{id}/show
+  defaults: { _controller: "AppBundle:DownloadFile:show" }
+  methods:  GET
+
+downloadfile_new:
+  path:     /new
+  defaults: { _controller: "AppBundle:DownloadFile:new" }
+  methods:  [GET, POST]
+
+downloadfile_edit:
+  path:     /{id}/edit
+  defaults: { _controller: "AppBundle:DownloadFile:edit" }
+  methods:  [GET, POST]
+
+downloadfile_delete:
+  path:     /{id}/delete
+  defaults: { _controller: "AppBundle:DownloadFile:delete" }
+  methods:  DELETE

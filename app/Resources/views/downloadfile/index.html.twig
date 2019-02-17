@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+    <li><a href="{{ path('_main') }}">Main</a></li>
+    <li><a href="{{ path('course_index') }}">Kursy</a></li>
+    <li><a href="{{ path('user_index') }}">Użytkownicy</a></li>
+    <li><a href="{{ path('lecture_index') }}">Wykłady</a></li>
+    <li class="active"><a href="{{ path('downloadfile_index') }}">Logi</a></li>
+{% endblock %}
+
+{% block body %}
+<div class="col-md-12">
+    <h1>Lista pobrań</h1>
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Data pobrania</th>
+                <th scope="col">Użytkownik</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for downloadFile in downloadFiles %}
+            <tr>
+                <th scope="row"><a href="{{ path('downloadfile_show', { 'id': downloadFile.id }) }}">{{ downloadFile.id }}</a></th>
+                <td>{% if downloadFile.dataDodania %}{{ downloadFile.dataDodania|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ downloadFile.nrUser }}</td>
+                <td>
+                    <a class="btn btn-info btn-lg btn-sm" href="{{ path('downloadfile_show', { 'id': downloadFile.id }) }}" role="button">pokaż</a>
+                    <a class="btn btn-info btn-lg btn-sm" href="{{ path('downloadfile_edit', { 'id': downloadFile.id }) }}" role="button">edytuj</a>
+
+
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+</div>
+{% endblock %}
