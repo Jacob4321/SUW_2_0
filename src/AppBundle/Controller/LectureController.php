@@ -4,7 +4,6 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Lecture;
 use AppBundle\Form\LectureType;
-use Symfony\Component\Form\Form;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -55,7 +54,7 @@ class LectureController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $file = $form->getNazwa();
+            $file = $lecture->getSciezka();
             $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
 
             try {
@@ -66,13 +65,13 @@ class LectureController extends Controller
             } catch (FileException $e) {
                 // ... handle exception if something happens during file upload
             }
-            $file->setNazwa($fileName);
+            $file->setSciezka($fileName);
 
 
             $em->persist($lecture);
             $em->flush();
 
-            return $this->redirectToRoute('lecture_show', array('id' => $lecture->getId()));
+            return $this->redirect($this->generateUrl('lecture_show'));
         }
 
         return $this->render('lecture/new.html.twig', array(

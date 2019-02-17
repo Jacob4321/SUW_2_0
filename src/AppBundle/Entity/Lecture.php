@@ -75,7 +75,7 @@ class Lecture
      *
      * @param string $nazwa
      *
-     * @return plik
+     * @return Lecture
      */
     public function setNazwa($nazwa)
     {
@@ -99,7 +99,7 @@ class Lecture
      *
      * @param string $sciezka
      *
-     * @return plik
+     * @return Lecture
      */
     public function setSciezka($sciezka)
     {
@@ -121,7 +121,7 @@ class Lecture
      *
      * @param integer $nrKursu
      *
-     * @return plik
+     * @return Lecture
      */
     public function setNrKursu($nrKursu)
     {
